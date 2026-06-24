@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – LUMECOR CANDLES</title>
+    <!-- Modern Jakarta Sans and Elegant Playfair -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="css/Common.css">
+    
+    <style>
+        :root {
+            /* HEALTHIER GREEN PALETTE APPLIED */
+            --sage-bg: #88A67E;     /* Healthy, vibrant Sage Green */
+            --sage-hover: #728F69;  /* Deep Forest Green for hover states */
+            --charcoal: #2D2D2D;    /* Deep Charcoal for text/buttons */
+            --cream: #FDFCF8;       /* Clean Cream background */
+            --white: #ffffff;
+
+            --text-light: rgba(255,255,255,0.85);  
+            --border-soft: rgba(0, 0, 0, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--cream); color: var(--charcoal); line-height: 1.8; }
+
+  /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            background: transparent;
+        }
+ .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--cream);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: var(--cream)}
+
+  .dropdown:hover .dropdown-content {
+    color: var(--sage-hover);
+    display: block;
+  }
+        .logo { text-decoration:none ; font-family: 'Playfair Display', serif; font-size: 28px; color: var(--charcoal); letter-spacing: -1px; font-weight: 800; }
+        .nav-links { list-style: none; display: flex; gap: 35px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--charcoal); font-size: 14px; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--sage-bg);  }
+        .nav-links span { text-decoration: none; color: var(--charcoal); font-size: 14px; font-weight: 600; }        /* --- Header Section --- */
+        .about-header {
+            padding: 80px 8% 40px;
+            text-align: center;
+        }
+        .about-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 6vw, 75px);
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            color: var(--sage-bg);
+        }
+        .about-header h1 span { font-style: italic; font-weight: 400; opacity: 0.7; }
+
+        /* --- Main Content Section --- */
+        .story-section {
+            background: var(--sage-bg);
+            border-radius: 60px 60px 0 0;
+            padding: 100px 8% 120px;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .story-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        .bio-badge {
+            display: inline-block;
+            border-left: 4px solid var(--sage-bg);
+            padding: 10px 0 10px 30px;
+            margin-top: 40px;
+            font-style: italic;
+            color: var(--charcoal);
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        .image-box {
+            position: relative;
+            background: var(--white);
+            border-radius: 40px;
+            padding: 25px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+        .image-box img {
+            width: 100%;
+            height: 85vh;
+            border-radius: 25px;
+            filter: contrast(105%);
+        }
+        .image-box::after {
+            content: "★";
+            position: absolute;
+            bottom: -20px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: var(--sage-bg);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+.lumecor-map {
+  background: var(--cream);
+  padding:100px 8%;
+}
+.map-container {
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+  align-items:center;
+  padding: 100px;
+  background-color: var(--sage-bg);
+  border-radius: 100px;
+}
+.map-text {
+  flex:1;
+}
+.map-text h2 {
+  font-size:40px;
+  margin-bottom:20px;
+}
+.map-text .btn{
+         background: var(--charcoal);
+            color: var(--white);
+            padding: 20px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            display: inline-block;
+            transition: 0.3s;
+            margin-top: 5%;
+}
+.map-text .btn:hover {
+     transform: scale(1.05); 
+            background: #000; 
+}
+.map-box {
+  flex:1;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.1);
+}
+.map-box iframe {
+  width:100%;
+  height:350px;
+  border:none;
+}
+@media (max-width: 1024px) {
+    .story-section { grid-template-columns: 1fr; gap: 60px; padding: 60px 5% 100px; }
+    .nav-links { display: none; }
+    .info-strip { flex-direction: column; gap: 50px; }
+}
+</style>
+
+</head>
+<body>
+
+   <nav>
+       <a href = "lumecor.html" class="logo">lumecor.</a>
+        <ul class="nav-links">
+            <li><a href="about.html">About Us</a></li>
+            <div class="dropdown">
+             <li><span>Candles</span></li>
+               <div class="dropdown-content">
+                 <a href="signature.html">Signature Candles</a>
+                 <a href="featured.html">Featured Candles</a>
+                 <a href="fall.html">Fall Candles</a>
+               </div>
+            </div>
+            <li><a href="gift.html">Gift Sets</a></li>
+             <li><a href="home_decor.html">Home Decore</a></li>
+            <li><a href="contact copy.html">Contact</a></li>
+            <li><a href="#" class="cart-btn" onclick="openCart()">Cart</a></li>
+        </ul>
+    </nav>
+
+    <header class="about-header">
+        <h1>Our <span>Story</span></h1>
+    </header>
+
+    <main class="story-section">
+        <!-- Text Section -->
+        <section class="story-content">
+            <h2>Luxury Meets Science</h2>
+            <p>LUMECOR Fragrance & Decor is a company based in Atlanta, GA. We believe that your home environment is a direct reflection of your well-being, and our mission is to elevate that space with artisanal precision.</p>
+            
+            <p>Our luxuriously healthy candles were created by a biologist who has spent a lifetime finding ways to promote the health and welfare of humanity. This scientific background ensures that every scent we curate is as mindful of your health as it is of your aesthetic.</p>
+            
+            <div class="bio-badge">
+                "Finding the intersection of biological wellness and high-end fragrance curation."
+            </div>
+        </section>
+
+        <!-- Visual Section -->
+        <section class="image-box">
+            <img src="candles/about.png" alt="LUMECOR Botanical Branding">
+        </section>
+    </main>
+
+    <section class="lumecor-map">
+  <div class="map-container">
+
+    <div class="map-text">
+      <h2>Visit Our Store</h2>
+      <p>1530 Ellsworth Industrial Blvd<br>Atlanta, GA</p>
+      <a href="https://www.google.com/maps?q=Atlanta" target="_blank"><button class="btn">Get Directions</button></a>
+    </div>
+
+    <div class="map-box">
+      <iframe src="https://www.google.com/maps?q=Atlanta&output=embed"></iframe>
+    </div>
+
+  </div>
+</section>
+ <footer class="simple-footer">
+
+  <div class="footer-container">
+
+    <!-- Links -->
+    <div class="footer-col">
+      <h3>Links</h3>
+      <ul>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Refund Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+        <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+
+    <!-- Address -->
+    <div class="footer-col">
+      <h3>Visit Us</h3>
+      <p>
+        <strong>Westside Market</strong><br>
+        1530 Ellsworth Industrial Blvd<br>
+        Suite 220<br>
+        Atlanta, GA 30318
+      </p>
+
+      <p>
+        <strong>Hours</strong><br>
+        Mon–Sat: 10AM–6PM<br>
+        Sun: 12PM–5PM
+      </p>
+    </div>
+
+    <!-- NEWSLETTER (RIGHT SIDE) -->
+    <div class="footer-col newsletter-col">
+      <h3>Stay in the know</h3>
+      <p>Get exclusive offers and new arrivals.</p>
+
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 LUMECOR — All rights reserved</p>
+  </div>
+
+</footer>
+
+<div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <span class="close-btn" onclick="closeCart()">×</span>
+    </div>
+
+    <div class="cart-items">
+        <p>Your cart is empty 🛒</p>
+    </div>
+
+   <div id="checkoutPage" class="checkout-page">
+
+    <div class="checkout-wrapper">
+
+        <!-- LEFT -->
+        <div class="checkout-left">
+            <span class="checkout-close" onclick="closeCheckout()">×</span>
+
+            <h2>Checkout</h2>
+
+            <p class="breadcrumb">Home > Cart > Checkout</p>
+
+            <!-- CONTACT -->
+            <h3>Contact Information</h3>
+            <div class="row">
+                <input placeholder="First name">
+                <input placeholder="Last name">
+            </div>
+            <div class="row">
+                <input placeholder="Email address">
+                <input placeholder="Phone number">
+            </div>
+
+            <!-- DELIVERY -->
+            <h3>Delivery Method</h3>
+            <label class="radio-box">
+                <input type="radio" name="delivery" checked>
+                Standard delivery (5–6 days) FREE
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="delivery">
+                Express delivery (1–2 days) $10
+            </label>
+
+            <!-- SHIPPING -->
+            <h3>Shipping Information</h3>
+            <div class="row">
+                <input placeholder="Country">
+                <input placeholder="City">
+            </div>
+            <div class="row">
+                <input placeholder="Address">
+                <input placeholder="Postal code">
+            </div>
+
+            <!-- PAYMENT -->
+            <h3>Payment Method</h3>
+            <label class="radio-box">
+                <input type="radio" name="pay" checked> Visa
+            </label>
+
+            <div class="row">
+                <input placeholder="Card number">
+                <input placeholder="Cardholder name">
+            </div>
+
+            <div class="row">
+                <input placeholder="MM/YY">
+                <input placeholder="CVV">
+            </div>
+
+            <label class="radio-box">
+                <input type="radio" name="pay"> Mastercard
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="pay"> PayPal
+            </label>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="checkout-right">
+
+            <h3>Order Summary</h3>
+
+            <div id="checkoutItems"></div>
+
+            <div class="summary">
+                <p>Subtotal <span id="subTotal"></span></p>
+                <p><strong>Total <span id="checkoutTotal"></span></strong></p>
+            </div>
+
+            <button class="pay-btn" onclick="placeOrder()">Place Order</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="cart-footer">
+        <h3 id="cartTotal">Total: $0.00</h3>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+</div>
+<script src="js/cart.js"></script>
+
+</body>
+</html>

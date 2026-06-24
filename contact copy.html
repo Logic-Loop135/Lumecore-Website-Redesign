@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | LUMECOR BOTANICAL</title>
+    <!-- Modern Jakarta Sans and Elegant Playfair -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="css/Common.css">
+    
+    <style>
+         :root {
+            /* HEALTHIER GREEN PALETTE APPLIED */
+            --sage-bg: #88A67E;     /* Healthy, vibrant Sage Green */
+            --sage-hover: #728F69;  /* Deep Forest Green for focus/hover */
+            --charcoal: #2D2D2D;    /* Deep Charcoal for text/buttons */
+            --cream: #FDFCF8;       /* Clean Cream background */
+            --white: #ffffff;
+
+            --text-light: rgba(255,255,255,0.85);  
+            --border-soft: rgba(0, 0, 0, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--cream); color: var(--sage-bg); line-height: 1.6; }
+  /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            background: transparent;
+        }
+ .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--cream);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: var(--cream)}
+
+  .dropdown:hover .dropdown-content {
+    color: var(--sage-hover);
+    display: block;
+  }
+        .logo { text-decoration:none ; font-family: 'Playfair Display', serif; font-size: 28px; color: var(--charcoal); letter-spacing: -1px; font-weight: 800; }
+        .nav-links { list-style: none; display: flex; gap: 35px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--charcoal); font-size: 14px; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--sage-bg);  }
+        .nav-links span { text-decoration: none; color: var(--charcoal); font-size: 14px; font-weight: 600; }        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 90vh;
+            padding: 80px 8%;
+            gap: 100px;
+            align-items: center;
+        }
+        .content-left h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(45px, 5vw, 65px);
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+        .content-left h1 span { font-style: italic; font-weight: 400; opacity: 0.7; }
+        .content-left p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 50px; max-width: 500px; color: var(--charcoal); }
+        
+        .meta-group { margin-bottom: 50px; }
+        .meta-item { display: flex; align-items: center; gap: 15px; color: var(--charcoal); margin-bottom: 20px; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 800; }
+        .meta-item span { color: var(--white); background: var(--sage-bg); padding: 2px 8px; border-radius: 4px; font-size: 10px; }
+
+        .team-card {
+            background: var(--sage-bg);
+            padding: 30px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 450px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-soft);
+        }
+        .team-img { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; background: #eee; }
+        .team-card h3 { font-size: 16px; margin-bottom: 5px; color: var(--charcoal); }
+        .team-card a { color: var(--cream); text-decoration: none; font-size: 12px; font-weight: 800; letter-spacing: 1px; }
+        .form-box {
+            background: var(--sage-bg);
+            padding: 60px;
+            border-radius: 60px;
+            position: relative;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+        }
+        .form-box::after {
+            content: "★";
+            position: absolute;
+            top: -20px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: var(--charcoal);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .full { grid-column: span 2; }
+        
+        label { display: block; font-size: 10px; text-transform: uppercase; color: var(--cream); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;  }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 16px;
+            background: var(--white);
+            border: 1px solid var(--border-soft);
+            border-radius: 15px;
+            color: var(--charcoal);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus { border-color: var(--sage-bg); box-shadow: 0 0 0 4px rgba(136, 166, 126, 0.1); }
+
+        .submit-btn {
+            background: var(--charcoal);
+            color: var(--white);
+            border: none;
+            padding: 22px;
+            width: 100%;
+            border-radius: 50px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: 0.3s ease;
+            text-transform: uppercase;
+        }
+        .submit-btn:hover { background: #000; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+
+        @media (max-width: 1024px) {
+            .contact-section { grid-template-columns: 1fr; padding: 60px 5%; }
+            .nav-links { display: none; }
+            .form-box { padding: 40px 30px; }
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+   <nav>
+       <a href = "lumecor.html" class="logo">lumecor.</a>
+        <ul class="nav-links">
+            <li><a href="about.html">About Us</a></li>
+            <div class="dropdown">
+             <li><span>Candles</span></li>
+               <div class="dropdown-content">
+                 <a href="signature.html">Signature Candles</a>
+                 <a href="featured.html">Featured Candles</a>
+                 <a href="fall.html">Fall Candles</a>
+               </div>
+            </div>
+            <li><a href="gift.html">Gift Sets</a></li>
+             <li><a href="home_decor.html">Home Decore</a></li>
+            <li><a href="contact copy.html">Contact</a></li>
+            <li><a href="#" class="cart-btn" onclick="openCart()">Cart</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact-section">
+        <!-- Left Side: Information -->
+        <section class="content-left">
+            <h1>The <span>Botanical</span> <br>Concierge</h1>
+            <p>Speak with our master artisans about bespoke fragrance curation and elite gift packaging for your next grand occasion.</p>
+            
+            <div class="meta-group">
+                <div class="meta-item"><span>[+]</span> 1.678.680.3167</div>
+                <div class="meta-item"><span>[+]</span> concierge@lumecor.com</div>
+                <div class="meta-item"><span>[+]</span> Global Flagship Stores</div>
+            </div>
+
+            <div class="team-card">
+                <img src="candles/contact.png" alt="Concierge" class="team-img">
+                <div>
+                    <h3>Join the Lumecor Atelier</h3>
+                    <a href="#">VIEW OPEN POSITIONS →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Side: Form -->
+        <section class="form-box">
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Julian Vane">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="vane@botanical.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" placeholder="+1 (000) 000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label>City / Location</label>
+                        <input type="text" placeholder="London, UK">
+                    </div>
+                    <div class="form-group full">
+                        <label>Type of Inquiry</label>
+                        <select>
+                            <option>Corporate Gifting</option>
+                            <option>Bespoke Candle Curation</option>
+                            <option>Wholesale Partnerships</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label>The Message</label>
+                        <textarea rows="4" placeholder="Briefly describe your vision..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">INITIATE REQUEST</button>
+            </form>
+        </section>
+    </main>
+<footer class="simple-footer">
+
+  <div class="footer-container">
+
+    <!-- Links -->
+    <div class="footer-col">
+      <h3>Links</h3>
+      <ul>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Refund Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+        <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+
+    <!-- Address -->
+    <div class="footer-col">
+      <h3>Visit Us</h3>
+      <p>
+        <strong>Westside Market</strong><br>
+        1530 Ellsworth Industrial Blvd<br>
+        Suite 220<br>
+        Atlanta, GA 30318
+      </p>
+
+      <p>
+        <strong>Hours</strong><br>
+        Mon–Sat: 10AM–6PM<br>
+        Sun: 12PM–5PM
+      </p>
+    </div>
+
+    <!-- NEWSLETTER (RIGHT SIDE) -->
+    <div class="footer-col newsletter-col">
+      <h3>Stay in the know</h3>
+      <p>Get exclusive offers and new arrivals.</p>
+
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 LUMECOR — All rights reserved</p>
+  </div>
+
+</footer>
+<div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <span class="close-btn" onclick="closeCart()">×</span>
+    </div>
+
+    <div class="cart-items">
+        <p>Your cart is empty 🛒</p>
+    </div>
+
+   <div id="checkoutPage" class="checkout-page">
+
+    <div class="checkout-wrapper">
+
+        <!-- LEFT -->
+        <div class="checkout-left">
+            <span class="checkout-close" onclick="closeCheckout()">×</span>
+
+            <h2>Checkout</h2>
+
+            <p class="breadcrumb">Home > Cart > Checkout</p>
+
+            <!-- CONTACT -->
+            <h3>Contact Information</h3>
+            <div class="row">
+                <input placeholder="First name">
+                <input placeholder="Last name">
+            </div>
+            <div class="row">
+                <input placeholder="Email address">
+                <input placeholder="Phone number">
+            </div>
+
+            <!-- DELIVERY -->
+            <h3>Delivery Method</h3>
+            <label class="radio-box">
+                <input type="radio" name="delivery" checked>
+                Standard delivery (5–6 days) FREE
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="delivery">
+                Express delivery (1–2 days) $10
+            </label>
+
+            <!-- SHIPPING -->
+            <h3>Shipping Information</h3>
+            <div class="row">
+                <input placeholder="Country">
+                <input placeholder="City">
+            </div>
+            <div class="row">
+                <input placeholder="Address">
+                <input placeholder="Postal code">
+            </div>
+
+            <!-- PAYMENT -->
+            <h3>Payment Method</h3>
+            <label class="radio-box">
+                <input type="radio" name="pay" checked> Visa
+            </label>
+
+            <div class="row">
+                <input placeholder="Card number">
+                <input placeholder="Cardholder name">
+            </div>
+
+            <div class="row">
+                <input placeholder="MM/YY">
+                <input placeholder="CVV">
+            </div>
+
+            <label class="radio-box">
+                <input type="radio" name="pay"> Mastercard
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="pay"> PayPal
+            </label>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="checkout-right">
+
+            <h3>Order Summary</h3>
+
+            <div id="checkoutItems"></div>
+
+            <div class="summary">
+                <p>Subtotal <span id="subTotal"></span></p>
+                <p><strong>Total <span id="checkoutTotal"></span></strong></p>
+            </div>
+
+            <button class="pay-btn" onclick="placeOrder()">Place Order</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="cart-footer">
+        <h3 id="cartTotal">Total: $0.00</h3>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+</div>
+
+<script src="js/cart.js"></script>
+
+</body>
+</html>
